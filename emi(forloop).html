@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java Code - EMI Calculation</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>EMI Calculation Using For Loop</h1>
+
+    <pre><code>
+import java.util.Scanner;
+import java.lang.Math;
+
+class abc
+{
+    void emi(double p, double r, double n)
+    {
+        double emi;
+        emi = (p * (r / 1200) * Math.pow((1 + (r / 1200)), (n * 12))) / (Math.pow((1 + (r / 1200)), (n * 12)) - 1);
+        int emii = (int) emi;
+        System.out.println("EMI IS:" + emi);
+        System.out.print("\n");
+        for (int i = 1; i <= n * 12; i++)
+        {
+            double iamt = p * (r / 1200);
+            int a = (int) iamt;
+            double pamt = emi - iamt;
+            int b = (int) pamt;
+            double rem = p - pamt;
+            int c = (int) rem;
+            System.out.println(i + "||" + b + "||" + a + "||" + emi + "\\" + "c" + "\n");
+            p = rem;
+        }
+    }
+}
+
+class demo
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Loan Amt:");
+        double p = sc.nextDouble();
+        System.out.print("Enter ROI:");
+        double r = sc.nextDouble();
+        System.out.print("Enter Year:");
+        double n = sc.nextDouble();
+        System.out.print("\n");
+        abc aa = new abc();
+        aa.emi(p, r, n);
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        Enter Loan Amt: 100000<br>
+        Enter ROI: 12<br>
+        Enter Year: 5<br>
+        <br>
+        EMI IS: 2224.72<br>
+        <br>
+        1||2245||1000||2224.72\c<br>
+        2||2244||123||2224.72\c<br>
+        3||2243||180||2224.72\c<br>
+        ...
+    </div>
+
+</body>
+
+</html>

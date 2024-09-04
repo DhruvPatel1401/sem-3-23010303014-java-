@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java Code with Multiple Classes and Methods</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap; /* Preserve line breaks and formatting */
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practical-4 : Multiple Class</h1>
+
+    <pre><code>
+class abc
+{
+    void sum(int a, int b)
+    {
+        System.out.println("Sum of=" + (a + b));
+    }
+
+    void mul(int a, int b)
+    {
+        System.out.println("Mul of=" + (a * b));
+    }
+}
+
+class xyz
+{
+    void cal(int a, int b)
+    {
+        System.out.println("Cal of=" + ((a + b) * 2));
+    }
+}
+
+class demo
+{
+    public static void main(String args[])
+    {
+        abc a = new abc();
+        xyz x = new xyz();
+        a.sum(2, 3);
+        a.mul(3, 4);
+        x.cal(3, 5);
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        Sum of=5<br>
+        Mul of=12<br>
+        Cal of=16
+    </div>
+
+</body>
+
+</html>

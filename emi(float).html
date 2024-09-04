@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java Code - EMI Calculation with Float Value</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1> EMI Calculation with Float Value</h1>
+
+    <pre><code>
+import java.util.Scanner;
+
+class abc
+{
+    void emi(double p, double r, double n)
+    {
+        double ans;
+        ans = (p * r * Math.pow((1 + (r / 1200)), (n * 12))) / (Math.pow((1 + (r / 1200)), (n * 12)) - 1);
+        //int anss = (int)ans;
+        System.out.println("EMI=" + ans);
+    }
+}
+
+class demo
+{
+    public static void main(String args[])
+    {
+        abc aa = new abc();
+        aa.emi(1200000, 10, 1);
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        EMI=104697.442
+    </div>
+
+</body>
+
+</html>

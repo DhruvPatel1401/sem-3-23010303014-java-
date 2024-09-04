@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Constructor Overloading - Java Code</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practical-11 : Constructor Overloading</h1>
+
+    <pre><code>
+class abc
+{
+    abc(int a, int b)
+    {
+        System.out.println("Ans = " + (a + b));
+    }
+
+    abc(int a, int b, int c)
+    {
+        System.out.println("Ans = " + (a + b + c));
+    }
+
+    abc()
+    {
+        System.out.println("Ans = " + (2 + 3));
+    }
+}
+
+class demo
+{
+    public static void main(String[] args)
+    {
+        abc aa1 = new abc(2, 3);
+        abc aa2 = new abc(3, 4, 5);
+        abc a = new abc();
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        Ans = 5
+        Ans = 12
+        Ans = 5
+    </div>
+
+</body>
+
+</html>

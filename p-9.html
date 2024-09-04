@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Method Overloading - Java Code</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practical-9 : Polymorphism</h1>
+
+    <pre><code>
+class xyz
+{
+    int x, y;
+    void sum(int a, int b)
+    {
+        x = a;
+        y = b;
+        System.out.println("Ans = " + (a + b));
+    }
+
+    void sum(int a)
+    {
+        System.out.println("Ans = " + (a * y));
+    }
+
+    void sum()
+    {
+        System.out.println("Ans = " + (x / y));
+    }
+}
+
+class demo
+{
+    public static void main(String[] args)
+    {
+        xyz x = new xyz();
+        x.sum(8, 4);
+        x.sum(4);
+        x.sum();
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        Ans = 12
+        Ans = 16
+        Ans = 2
+    </div>
+
+</body>
+
+</html>

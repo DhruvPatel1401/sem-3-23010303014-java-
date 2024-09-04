@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>This Keyword - Java Code</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practical-16 : This Keyword </h1>
+
+    <pre><code>
+class abc
+{
+    int a, b;
+
+    void sum(int a, int b)
+    {
+        this.a = a;
+        this.b = b;
+        System.out.println("Sum is " + (a + b));
+    }
+
+    void display()
+    {
+        System.out.println("Mul is " + (a * b));
+    }
+}
+
+class demo
+{
+    public static void main(String args[])
+    {
+        abc aa = new abc();
+        aa.sum(10, 20);
+        aa.display();
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        Sum is 30<br>
+        Mul is 200
+    </div>
+
+</body>
+
+</html>

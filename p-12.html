@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>For Loop - Java Code</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practical-12 : For Loop</h1>
+
+    <pre><code>
+class abc
+{
+    void cal(int a)
+    {
+        for (int i = 1; i <= a; i++)
+        {
+            System.out.println("Ans: " + i);
+        }
+    }
+}
+
+class demo
+{
+    public static void main(String[] args)
+    {
+        abc aa = new abc();
+        aa.cal(10);
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        Ans: 1
+        Ans: 2
+        Ans: 3
+        Ans: 4
+        Ans: 5
+        Ans: 6
+        Ans: 7
+        Ans: 8
+        Ans: 9
+        Ans: 10
+    </div>
+
+</body>
+
+</html>

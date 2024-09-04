@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Practical</title>
+    <style type="text/css">
+        /* Apply basic resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #007acc, #005faa);
+            color: #ffffff;
+        }
+
+        /* Table styling */
+        table {
+            height: 100vh;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 15px;
+            vertical-align: top;
+        }
+
+        /* Sidebar styling */
+        td:first-child {
+            width: 20%;
+            background: rgba(0, 0, 0, 0.7);
+            animation: slideIn 0.8s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Centered text in sidebar */
+        td:first-child center {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Sidebar list styling */
+        ul {
+            list-style: none;
+            padding: 10px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #ff6600;
+            color: #000000;
+            transform: scale(1.05);
+        }
+
+        /* Right panel (iframe) */
+        td:last-child {
+            width: 80%;
+            background-color: #f4f4f4;
+            animation: fadeIn 0.8s ease;
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        iframe {
+            border: none;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        iframe.visible {
+            opacity: 1;
+        }
+
+        /* Loader styling */
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #007acc;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <center>
+                    <b>Semester-3</b>
+                    <br><b>Subject: Java</b>
+                    <br><b>Class: BSc (AI & DS)</b>
+                    <br><b>Student Name: Patel Dhruv</b>
+                    <br><b>Enrollment No.: 23010303014</b>
+                </center>
+                <ul>
+                    <li><a href="p-1.html" target="temp">Practical-1</a></li>
+                    <li><a href="p-2.html" target="temp">Practical-2</a></li>
+                    <li><a href="p-3.html" target="temp">Practical-3</a></li>
+                    <li><a href="p-4.html" target="temp">Practical-4</a></li>
+                    <li><a href="p-5.html" target="temp">Practical-5</a></li>
+                    <li><a href="p-6.html" target="temp">Practical-6</a></li>
+                    <li><a href="p-7.html" target="temp">Practical-7</a></li>
+                    <li><a href="p-8.html" target="temp">Practical-8</a></li>
+                    <li><a href="p-9.html" target="temp">Practical-9</a></li>
+                    <li><a href="p-10.html" target="temp">Practical-10</a></li>
+                    <li><a href="p-11.html" target="temp">Practical-11</a></li>
+                    <li><a href="p-12.html" target="temp">Practical-12</a></li>
+                    <li><a href="p-13.html" target="temp">Practical-13</a></li>
+                    <li><a href="p-14.html" target="temp">Practical-14</a></li>
+                    <li><a href="p-15.html" target="temp">Practical-15</a></li>
+                    <li><a href="p-16.html" target="temp">Practical-16</a></li>
+                    <li><a href="p-17.html" target="temp">Practical-17</a></li>
+                    <li><a href="cagr.html" target="temp">CAGR</a></li>
+                    <li><a href="emi(forloop).html" target="temp">Emi Using for loop</a></li>
+                    <li><a href="emi(float).html" target="temp">Emi with float value</a></li>
+
+                    <!-- Add more practicals as necessary -->
+                </ul>
+            </td>
+            <td>
+                <div class="loader" id="loader"></div>
+                <iframe src="" name="temp" id="iframe"></iframe>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // Get the iframe and loader elements
+        const iframe = document.getElementById('iframe');
+        const loader = document.getElementById('loader');
+
+        // Add event listener to show loader and fade in iframe
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                loader.style.display = 'block';
+                iframe.classList.remove('visible');
+            });
+        });
+
+        // Add an event listener to the iframe to hide the loader and show the content
+        iframe.addEventListener('load', () => {
+            loader.style.display = 'none';
+            iframe.classList.add('visible');
+        });
+    </script>
+</body>
+
+</html>
