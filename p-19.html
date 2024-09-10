@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ArrayList Methods - Java Code</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practical-19 : ArrayList Methods(Add,Set,Get,Remove,Size,Clear) </h1>
+
+    <pre><code>
+import java.util.ArrayList;
+
+class demo
+{
+    public static void main(String args[])
+    {
+        ArrayList<String> stu = new ArrayList<String>();
+        
+        // Add elements
+        stu.add("Hi");
+        stu.add("Dhruv");
+        stu.add("Patel");
+        System.out.println("Ans: " + stu);
+        
+        // Add element at specific index
+        stu.add(1, "Good Morning");
+        System.out.println("Ans: " + stu);
+        
+        // Get element from a specific index
+        System.out.println("Ans: " + stu.get(2));
+        
+        // Set element at specific index
+        stu.set(3, "BBB");
+        System.out.println("Ans: " + stu);
+        
+        // Remove element from specific index
+        stu.remove(1);
+        System.out.println("Ans: " + stu);
+        
+        // Get the size of the ArrayList
+        System.out.println("SIZE of: " + stu.size());
+        
+        // Clear all elements
+        stu.clear();
+        System.out.println("STU DATA: " + stu);
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        Ans: [Hi, Dhruv, Patel]<br>
+        Ans: [Hi, Good Morning, Dhruv, Patel]<br>
+        Ans: Dhruv<br>
+        Ans: [Hi, Good Morning, Dhruv, BBB]<br>
+        Ans: [Hi, Dhruv, BBB]<br>
+        SIZE of: 3<br>
+        STU DATA: []
+    </div>
+
+</body>
+
+</html>
