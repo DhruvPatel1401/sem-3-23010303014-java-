@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Java Code - EMI Calculation with Float Value</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculation - Java Code</title>
     <style>
         /* Code block styling */
         pre {
@@ -38,19 +38,21 @@
 
 <body>
 
-    <h1> EMI Calculation with Float Value</h1>
+    <h1>EMI Calculation - Java Code</h1>
 
     <pre><code>
 import java.util.Scanner;
+import java.lang.Math;
 
 class abc
 {
     void emi(double p, double r, double n)
     {
         double ans;
-        ans = (p * r * Math.pow((1 + (r / 1200)), (n * 12))) / (Math.pow((1 + (r / 1200)), (n * 12)) - 1);
-        //int anss = (int)ans;
-        System.out.println("EMI=" + ans);
+        ans = (p * (r / 1200) * Math.pow((1 + (r / 1200)), (n * 12))) / 
+              (Math.pow((1 + (r / 1200)), (n * 12)) - 1);
+        int anss = (int) ans;
+        System.out.println("EMI IS: " + ans);
     }
 }
 
@@ -59,14 +61,14 @@ class demo
     public static void main(String args[])
     {
         abc aa = new abc();
-        aa.emi(1200000, 10, 1);
+        aa.emi(120000, 4, 1);  // Loan amount 120,000, Interest rate 4%, Term 1 year
     }
 }
     </code></pre>
 
     <h2>Output:</h2>
     <div class="output">
-        EMI=104697.442
+        EMI IS: 10238.162201681087
     </div>
 
 </body>
