@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Java Code - Percentage Calculation</title>
+    <title>CAGR Calculation - Java Code</title>
     <style>
         /* Code block styling */
         pre {
@@ -38,55 +38,66 @@
 
 <body>
 
-    <h1>CAGR(Compund Annual Growth Rate)</h1>
+    <h1>CAGR Calculation - Java Code</h1>
 
     <pre><code>
 import java.util.Scanner;
+import java.lang.Math;
 
-class abc
+class demo
 {
-    public static void main(String[] args)
+    public static void main(String args[]) 
     {
-        Scanner scanner = new Scanner(System.in);
-
-        float aa;
-        float[][] a = new float[2][4];
-        float opb, clb, n, cagr;
-
-        System.out.print("Enter your value: ");
-        aa = scanner.nextFloat();
-
-        for (int i = 0; i < 4; i++)
+        Scanner sc = new Scanner(System.in);
+        double[][] a = new double[2][8];
+        int i;
+        System.out.print("Enter Amount: ");
+        double aa = sc.nextDouble();
+        
+        // Get percentage inputs for 5 years
+        for(i = 0; i <= 4; i++)
         {
-            System.out.print("Enter percentage: ");
-            a[1][i] = scanner.nextFloat();
+            System.out.print("Enter Percentage: ");
+            a[1][i] = sc.nextDouble();
         }
-
+        
+        // First year calculation
         a[0][0] = (aa * (a[1][0] / 100)) + aa;
-        for (int i = 0; i < 3; i++)
+        
+        // Calculate subsequent years
+        for(i = 0; i <= 4; i++)
         {
-            a[0][i + 1] = (a[0][i] * (a[1][i + 1] / 100)) + a[0][i];
+            a[0][i+1] = (a[0][i] * (a[1][i+1] / 100)) + a[0][i];
         }
-
-        for (int i = 0; i < 4; i++)
+        
+        // Display results for all years
+        for(i = 0; i <= 4; i++)
         {
-            System.out.printf("Answer is=%.2f\n", a[0][i]);
+            System.out.print("Ans: " + a[0][i] + "\n");
         }
+        
+        // Calculate CAGR
+        double n = 5;
+        double cagr = (Math.pow((a[0][4] / aa), (1 / n)) - 1) * 100;
+        System.out.print("CAGR Is: " + cagr);
     }
 }
     </code></pre>
 
     <h2>Output:</h2>
     <div class="output">
-        Enter your value: 1000<br>
-        Enter percentage: 10<br>
-        Enter percentage: 20<br>
-        Enter percentage: 15<br>
-        Enter percentage: 5<br>
-        Answer is=1100.00<br>
-        Answer is=1320.00<br>
-        Answer is=1518.00<br>
-        Answer is=1595.90<br>
+        Enter Amount: 10000<br>
+        Enter Percentage: 10<br>
+        Enter Percentage: 12<br>
+        Enter Percentage: 8<br>
+        Enter Percentage: 15<br>
+        Enter Percentage: 9<br>
+        Ans: 11000.0<br>
+        Ans: 12320.0<br>
+        Ans: 13305.6<br>
+        Ans: 15291.44<br>
+        Ans: 16667.67<br>
+        CAGR Is: 10.73
     </div>
 
 </body>
