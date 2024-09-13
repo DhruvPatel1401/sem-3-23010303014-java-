@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception Handling - Try Catch Example</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practical-22 : Exception Handling - Try Catch </h1>
+
+    <pre><code>
+import java.util.Scanner;
+
+class abc
+{
+    int a, b;
+    void sum(int a, int b)
+    {
+        this.a = a;
+        this.b = b;
+        int ans;
+        try
+        {
+            ans = a / b;
+            System.out.println("Result: " + ans);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Error: Division by zero");
+        }
+        finally
+        {
+            System.out.println("Division is done");
+        }
+    }
+    
+    void display()
+    {
+        System.out.println("Hello");
+    }
+}
+
+class demo
+{
+    public static void main(String args[])
+    {
+        abc aa = new abc();
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter value-1: ");
+        int a = sc.nextInt();
+        
+        System.out.print("Enter value-2: ");
+        int b = sc.nextInt();
+        
+        aa.sum(a, b);
+        aa.display();
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        Enter value-1: 10<br>
+        Enter value-2: 0<br>
+        Error: Division by zero<br>
+        Division is done<br>
+        Hello
+    </div>
+
+</body>
+
+</html>
