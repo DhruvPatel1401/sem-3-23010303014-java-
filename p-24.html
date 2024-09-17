@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilevel Inheritance - Java Code</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practical-24 : Multilevel Inheritance </h1>
+
+    <pre><code>
+class abc
+{
+    void hello(int a, int b)
+    {
+        System.out.println("Ans = " + (a + b));  // Addition
+    }
+}
+
+class xyz extends abc
+{
+    void display(int a, int b)
+    {
+        System.out.println("Ans = " + (a * b));  // Multiplication
+    }
+}
+
+class pqr extends xyz
+{
+    void sum(int a, int b)
+    {
+        System.out.println("Ans = " + (a - b));  // Subtraction
+    }
+}
+
+class demo
+{
+    public static void main(String args[])
+    {
+        pqr p = new pqr();  // Creating object of the child class
+        p.hello(16, 4);     // Accessing method from 'abc' class (addition)
+        p.display(4, 16);   // Accessing method from 'xyz' class (multiplication)
+        p.sum(10, 5);       // Accessing method from 'pqr' class (subtraction)
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        Ans = 20<br>
+        Ans = 64<br>
+        Ans = 5
+    </div>
+
+</body>
+
+</html>
