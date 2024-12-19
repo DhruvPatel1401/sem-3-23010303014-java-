@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Package Example</title>
+    <style>
+        /* Code block styling */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            display: block;
+        }
+
+        /* Output block styling */
+        .output {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practical-28 : Multiple Class in Package</h1>
+
+     <h3>p-28 folder > abc folder > xyz folder > xyz.java</h3>
+    <pre><code>
+package abc.xyz;
+public class xyz
+{
+    public void sum()
+    {
+        System.out.println("Java");
+    }
+}
+    </code></pre>
+
+
+    <h3>p-28 folder > abc folder > abc.java</h3>
+    <pre><code>
+package abc;
+import abc.xyz.xyz;
+public class abc extends xyz
+{
+    public void mul()
+    {
+        System.out.println("Python");
+    }
+}
+    </code></pre>
+    <h3>p-28 folder > demo.java</h3>
+    <pre><code>
+import abc.abc;
+class demo
+{   
+    public static void main(String args[])
+    {
+        abc aa=new abc();
+        aa.sum();
+        aa.mul();   
+    }
+}
+    </code></pre>
+
+    <h2>Output:</h2>
+    <div class="output">
+        Java
+        Python
+    </div>
+
+</body>
+
+</html>
